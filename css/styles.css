@@ -375,6 +375,16 @@ code {
   margin: 0 0 1rem;
 }
 
+.section-about .about-lead {
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 52ch;
+}
+.section-about .prose:last-of-type {
+  margin-bottom: 0;
+}
+
 /* Stats */
 .stat-panel {
   border: 1px solid var(--line);
