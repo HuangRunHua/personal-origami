@@ -537,6 +537,10 @@ code {
   text-align: center;
   padding: 1rem;
 }
+/* 作者样式里对 .card-placeholder 写了 display:flex，会盖过 [hidden] 的隐式表现，故显式让带 hidden 时真正不显示 */
+.card-placeholder[hidden] {
+  display: none !important;
+}
 
 .card-body {
   padding: 1.1rem 1.2rem 1.25rem;
