@@ -87,11 +87,6 @@ function createCard(w) {
   const onBad = () => {
     ph.hidden = false;
   };
-  function doneIfCached() {
-    if (img.complete && img.naturalWidth > 0) onOk();
-  }
-  img.addEventListener("load", onOk);
-  img.addEventListener("error", onBad);
   visual.append(img, ph);
   const card = el("div", {
     className: "gallery-card",
@@ -101,8 +96,36 @@ function createCard(w) {
   });
   if (w.image) {
     queueMicrotask(() => {
-      img.src = imageSrcEncoded(w.image);
-      doneIfCached();
+      const path = imageSrcEncoded(w.image);
+      // 用 fetch → blob 再 objectURL 赋给 img，避免部分环境对含中文/编码的 img.src 误报 error、占位一直显示
+      fetch(path, { cache: "force-cache" })
+        .then((r) => {
+          if (!r.ok) throw new Error("fetch");
+          return r.blob();
+        })
+        .then((blob) => {
+          if (!blob.size) throw new Error("empty");
+          const u = URL.createObjectURL(blob);
+          const cleanup = () => URL.revokeObjectURL(u);
+          img.addEventListener(
+            "load",
+            () => {
+              onOk();
+              cleanup();
+            },
+            { once: true }
+          );
+          img.addEventListener(
+            "error",
+            () => {
+              onBad();
+              cleanup();
+            },
+            { once: true }
+          );
+          img.src = u;
+        })
+        .catch(() => onBad());
     });
   } else {
     onBad();
