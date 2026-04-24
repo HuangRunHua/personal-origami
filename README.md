@@ -25,7 +25,8 @@ python3 -m http.server 8080
 
 ## 日常维护
 
-- 成品图放在 `images/works/`，在 `data/works.json` 中维护作品条目。单张图用字段 `image`；**多张**（多面/多角度）用 `images: ["…","…"]` 数组。可选 `imageLabels: ["正面","背面"]` 与 `images` 一一对应，在灯箱中显示在对应图下；不填 `imageLabels` 则仅多图展示、无小标题。
+- 成品图放在 `images/works/`，在 `data/works.json` 中维护作品条目。单张图用字段 `image`；**多张**（多面/多角度）用 `images: ["…","…"]` 数组；灯箱内横向翻页，图下不另附说明文字。
+- 首屏右侧为 **一张折痕图（CP）**：在 `data/works.json` 根级设 `heroCreasePattern: { "image": "…", "label": "…" }`，`image` 放在 `images/cp/`（PNG、JPG、SVG 均可）。未配置或加载失败时用默认示意文件。
 - 全站通栏、关于、选集、问答等正文已在 `index.html` 中定稿；若需改版式或文案，直接编辑 `index.html` 与 `css/styles.css`。
 
 ## 许可

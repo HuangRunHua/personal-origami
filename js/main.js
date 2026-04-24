@@ -1,7 +1,15 @@
 /**
  * 从 data/works.json 渲染画廊、筛选、灯箱与作品计数
  */
-const state = { works: [], filter: "全部" };
+const state = {
+  works: [],
+  filter: "全部",
+  /** 灯箱多图：键盘左右键；teardown 在关闭/打开新作品时执行 */
+  lightboxNav: null,
+  lightboxCleanup: null,
+  /** 防止多图 Promise 在关闭或切换作品后写回已移除的节点 */
+  lightboxSession: 0,
+};
 
 async function loadWorks() {
   const res = await fetch("data/works.json", { cache: "no-store" });
@@ -64,19 +72,6 @@ function getWorkImagePaths(w) {
   return [];
 }
 
-function getImageLabels(w, count) {
-  if (!count) return [];
-  if (Array.isArray(w.imageLabels) && w.imageLabels.length) {
-    return Array.from({ length: count }, (_, i) => {
-      if (i < w.imageLabels.length && w.imageLabels[i] != null) {
-        return String(w.imageLabels[i]).trim();
-      }
-      return "";
-    });
-  }
-  return Array(count).fill("");
-}
-
 function loadImageFromPath(srcPath) {
   return fetch(imageSrcEncoded(srcPath), { cache: "force-cache" })
     .then((r) => {
@@ -126,7 +121,7 @@ function createCard(w) {
   const visual = el("div", { className: "card-visual" });
   const img = document.createElement("img");
   img.alt = w.title || "作品";
-  const ph = el("div", { className: "card-placeholder", text: "请放置照片" });
+  const ph = el("div", { className: "card-placeholder", text: "图片整理中" });
   ph.hidden = true;
   const onOk = () => {
     ph.hidden = true;
@@ -200,7 +195,7 @@ function createCard(w) {
     );
   }
   bodyParts.push(
-    el("p", { className: "card-designer", text: `设计：${w.designer || "—"}` })
+    el("p", { className: "card-designer", text: `设计者：${w.designer || "—"}` })
   );
   if (w.source) {
     bodyParts.push(
@@ -210,7 +205,7 @@ function createCard(w) {
   bodyParts.push(
     el("p", {
       className: "card-meta",
-      text: [w.paper, w.year].filter(Boolean).join(" · "),
+      text: [w.paper, w.year ? `${w.year} 完成` : ""].filter(Boolean).join(" · "),
     }),
     el("div", { className: "card-tags" }, tags)
   );
@@ -230,13 +225,36 @@ function createCard(w) {
 const lightbox = () => document.getElementById("lightbox");
 const lightboxContent = () => document.getElementById("lightbox-content");
 
+function getCarouselIndex(track) {
+  const w = track.clientWidth;
+  if (!w) return 0;
+  return Math.min(
+    track.children.length - 1,
+    Math.max(0, Math.round(track.scrollLeft / w))
+  );
+}
+
+function setCarouselIndex(track, i, behavior) {
+  const w = track.clientWidth;
+  if (!w) return;
+  const n = track.children.length;
+  const idx = Math.min(n - 1, Math.max(0, i));
+  track.scrollTo({ left: idx * w, behavior: behavior || "smooth" });
+}
+
 function openLightbox(w) {
+  if (state.lightboxCleanup) {
+    state.lightboxCleanup();
+    state.lightboxCleanup = null;
+  }
+  state.lightboxNav = null;
+  const session = ++state.lightboxSession;
+
   const root = lightbox();
   const content = lightboxContent();
   if (!root || !content) return;
   content.replaceChildren();
   const paths = getWorkImagePaths(w);
-  const labels = getImageLabels(w, paths.length);
   const wrap = el("div", { className: "lightbox-image-wrap" });
   const textParts = [el("h2", { text: w.title || "无标题" })];
   if (w.titleAlt) {
@@ -245,9 +263,9 @@ function openLightbox(w) {
     );
   }
   textParts.push(
-    el("p", { className: "field", text: `设计：${w.designer || "—"}` }),
-    el("p", { className: "field", text: `纸张：${w.paper || "—"}` }),
-    el("p", { className: "field", text: `成稿年份：${w.year ?? "—"}` })
+    el("p", { className: "field", text: `设计者：${w.designer || "—"}` }),
+    el("p", { className: "field", text: `用纸：${w.paper || "—"}` }),
+    el("p", { className: "field", text: `完成时间：${w.year ?? "—"}` })
   );
   if (w.source) {
     textParts.push(
@@ -262,7 +280,7 @@ function openLightbox(w) {
   const text = el("div", { className: "lightbox-text" }, textParts);
   if (!paths.length) {
     const ph = el("p", { className: "lightbox-missing" });
-    ph.textContent = "该作品未配置图片路径。";
+    ph.textContent = "这件作品的图片还没补上。";
     wrap.append(ph);
   } else if (paths.length === 1) {
     const img = new Image();
@@ -270,27 +288,104 @@ function openLightbox(w) {
     img.alt = w.title || "";
     wrap.append(img);
   } else {
-    const stack = el("div", { className: "lightbox-images" });
+    const carousel = el("div", { className: "lightbox-carousel" });
+    const track = el("div", { className: "lightbox-slides", tabIndex: 0 });
+    const counter = el("p", {
+      className: "lightbox-carousel-counter",
+      "aria-live": "polite",
+    });
+    const navPrev = el("button", {
+      type: "button",
+      className: "lightbox-nav lightbox-nav-prev",
+      text: "‹",
+    });
+    navPrev.setAttribute("aria-label", "上一张");
+    const navNext = el("button", {
+      type: "button",
+      className: "lightbox-nav lightbox-nav-next",
+      text: "›",
+    });
+    navNext.setAttribute("aria-label", "下一张");
+    carousel.append(track, navPrev, navNext, counter);
+    wrap.append(carousel);
+
+    const syncFromScroll = () => {
+      const i = getCarouselIndex(track);
+      const n = track.children.length;
+      counter.textContent = `${i + 1} / ${n}`;
+      const atFirst = i <= 0;
+      const atLast = i >= n - 1;
+      navPrev.disabled = atFirst;
+      navNext.disabled = atLast;
+      navPrev.setAttribute("aria-disabled", atFirst ? "true" : "false");
+      navNext.setAttribute("aria-disabled", atLast ? "true" : "false");
+    };
+
+    let scrollTid;
+    const onScroll = () => {
+      clearTimeout(scrollTid);
+      scrollTid = setTimeout(() => syncFromScroll(), 48);
+    };
+
+    const onResize = () => {
+      const i = getCarouselIndex(track);
+      setCarouselIndex(track, i, "instant");
+      syncFromScroll();
+    };
+
+    navPrev.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const i = getCarouselIndex(track);
+      if (i > 0) setCarouselIndex(track, i - 1, "smooth");
+    });
+    navNext.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const i = getCarouselIndex(track);
+      const n = track.children.length;
+      if (i < n - 1) setCarouselIndex(track, i + 1, "smooth");
+    });
+    track.addEventListener("scroll", onScroll, { passive: true });
+
+    const ro =
+      typeof ResizeObserver !== "undefined"
+        ? new ResizeObserver(() => onResize())
+        : null;
+    if (ro) ro.observe(track);
+
+    state.lightboxNav = { track };
+    state.lightboxCleanup = () => {
+      clearTimeout(scrollTid);
+      track.removeEventListener("scroll", onScroll);
+      if (ro) ro.disconnect();
+    };
+
     Promise.all(paths.map((p) => loadImageFromPath(p)))
       .then((imgs) => {
+        if (session !== state.lightboxSession) return;
         imgs.forEach((im, i) => {
-          const cap = labels[i] || `图 ${i + 1}`;
-          im.alt = `${w.title || "作品"} — ${cap}`;
+          im.alt = `${w.title || "作品"}（${i + 1} / ${imgs.length}）`;
           const block = el("div", { className: "lightbox-fig" });
           block.append(im);
-          if (labels[i] && String(labels[i]).length) {
-            block.append(
-              el("p", { className: "lightbox-figcap", text: labels[i] })
-            );
-          }
-          stack.append(block);
+          const slide = el("div", { className: "lightbox-slide" });
+          slide.append(block);
+          track.append(slide);
         });
-        wrap.append(stack);
+        requestAnimationFrame(() => {
+          if (session !== state.lightboxSession) return;
+          setCarouselIndex(track, 0, "instant");
+          syncFromScroll();
+        });
       })
       .catch(() => {
+        if (session !== state.lightboxSession) return;
+        if (state.lightboxCleanup) {
+          state.lightboxCleanup();
+          state.lightboxCleanup = null;
+        }
+        state.lightboxNav = null;
         const err = el("p", { className: "lightbox-missing" });
-        err.textContent = "部分图片无法加载。";
-        wrap.append(err);
+        err.textContent = "图片没能完整加载出来，可以稍后再试。";
+        wrap.replaceChildren(err);
       });
   }
   content.append(wrap, text);
@@ -299,6 +394,12 @@ function openLightbox(w) {
 }
 
 function closeLightbox() {
+  state.lightboxSession += 1;
+  if (state.lightboxCleanup) {
+    state.lightboxCleanup();
+    state.lightboxCleanup = null;
+  }
+  state.lightboxNav = null;
   const root = lightbox();
   if (!root) return;
   root.hidden = true;
@@ -378,6 +479,20 @@ function initLightbox() {
   }
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeLightbox();
+    const root = lightbox();
+    if (!root || root.hidden || !state.lightboxNav) return;
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      const track = state.lightboxNav.track;
+      const i = getCarouselIndex(track);
+      if (i > 0) setCarouselIndex(track, i - 1, "smooth");
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      const track = state.lightboxNav.track;
+      const i = getCarouselIndex(track);
+      const n = track.children.length;
+      if (i < n - 1) setCarouselIndex(track, i + 1, "smooth");
+    }
   });
 }
 
@@ -395,9 +510,10 @@ async function main() {
     if (grid) {
       grid.replaceChildren();
       const p = el("p", { className: "section-desc" });
-      p.textContent = "作品列表暂时无法加载，请刷新页面或稍后再试。";
+      p.textContent = "作品列表暂时没加载出来，可以刷新页面或稍后再试。";
       grid.append(p);
     }
+    state.works = [];
   }
   initNav();
   initLightbox();
