@@ -1,6 +1,6 @@
 # 仿折作品展示 · Origami Gallery
 
-个人非盈利静态站点，用于展示仿折成品照片（不含步骤与折图）。可部署为 GitHub Project Pages，地址形如：`https://<用户名>.github.io/personal-origami/`（仓库名以你实际在 GitHub 上创建的名为准）。
+个人折纸作品分享用静态站，主展示成品摄影与作品信息。可部署为 GitHub Project Pages，地址形如：`https://<用户名>.github.io/<仓库名>/`（仓库名自定，例如 `origami`）。
 
 ## 本地预览
 
@@ -30,4 +30,4 @@ python3 -m http.server 8080
 
 ## 许可
 
-网站代码你可自由修改。展示的照片与设计署名请遵守你对原作者的约定（仅作一般提醒，非法律意见）。
+网站代码你可自由按需要修改。
