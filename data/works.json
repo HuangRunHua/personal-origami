@@ -87,6 +87,25 @@
       ]
     },
     {
+      "id": "work-inari-fox",
+      "title": "稻荷狐",
+      "titleAlt": "Inari Fox",
+      "designer": "Kyohei Katsuta（胜田恭平）",
+      "source": "出典：《The30th Anniversary Origami Tanteidan Convention 2025》",
+      "year": 2026,
+      "paper": "KOMA 35cm×35cm 单色",
+      "note": "这件作品在线上的讨论里，常被提到的是耳部和眼神的处理。耳朵拉得更大以后，整体会带一点神使般的气息，眼部的留白和转折也让表情显得更凝。它和《狐嫁》一系的头部语言有延续关系，但整体又收得很简，既保留了狐的灵性，也尽量避开了过分像兔子的观感。",
+      "images": [
+        "images/works/稻荷狐1.jpeg",
+        "images/works/稻荷狐2.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "胜田恭平",
+        "现代"
+      ]
+    },
+    {
       "id": "work-kamiya-lion",
       "title": "狮子",
       "titleAlt": "Lion",
