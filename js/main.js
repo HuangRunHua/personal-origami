@@ -31,6 +31,13 @@ function el(tag, props = {}, children = []) {
   return n;
 }
 
+function truncate(s, n) {
+  if (!s) return "";
+  const one = s.replace(/\s+/g, " ").trim();
+  if (one.length <= n) return one;
+  return one.slice(0, n) + "…";
+}
+
 function workMatches(w, filter) {
   if (filter === "全部" || !filter) return true;
   return (w.tags || []).includes(filter);
@@ -72,15 +79,30 @@ function createCard(w) {
   const tags = (w.tags || []).map((t) =>
     el("span", { className: "pill", text: t })
   );
-  const body = el("div", { className: "card-body" }, [
+  const bodyParts = [
     el("h3", { className: "card-title", text: w.title || "无标题" }),
-    el("p", { className: "card-designer", text: `设计：${w.designer || "—"}` }),
+  ];
+  if (w.titleAlt) {
+    bodyParts.push(
+      el("p", { className: "card-subtitle", text: w.titleAlt })
+    );
+  }
+  bodyParts.push(
+    el("p", { className: "card-designer", text: `设计：${w.designer || "—"}` })
+  );
+  if (w.source) {
+    bodyParts.push(
+      el("p", { className: "card-source", text: truncate(w.source, 96) })
+    );
+  }
+  bodyParts.push(
     el("p", {
       className: "card-meta",
       text: [w.paper, w.year].filter(Boolean).join(" · "),
     }),
-    el("div", { className: "card-tags" }, tags),
-  ]);
+    el("div", { className: "card-tags" }, tags)
+  );
+  const body = el("div", { className: "card-body" }, bodyParts);
 
   const btn = el("button", {
     className: "gallery-card",
@@ -104,16 +126,28 @@ function openLightbox(w) {
   img.src = w.image;
   img.alt = w.title || "";
   const wrap = el("div", { className: "lightbox-image-wrap" }, [img]);
-  const note = w.note
-    ? el("p", { className: "note", text: w.note })
-    : null;
-  const text = el("div", { className: "lightbox-text" }, [
-    el("h2", { text: w.title || "无标题" }),
+  const textParts = [el("h2", { text: w.title || "无标题" })];
+  if (w.titleAlt) {
+    textParts.push(
+      el("p", { className: "field field-alt", text: w.titleAlt })
+    );
+  }
+  textParts.push(
     el("p", { className: "field", text: `设计：${w.designer || "—"}` }),
     el("p", { className: "field", text: `纸张：${w.paper || "—"}` }),
-    el("p", { className: "field", text: `年份：${w.year ?? "—"}` }),
-    note,
-  ]);
+    el("p", { className: "field", text: `成稿年份：${w.year ?? "—"}` })
+  );
+  if (w.source) {
+    textParts.push(
+      el("p", { className: "field field-source", text: w.source })
+    );
+  }
+  if (w.note) {
+    const noteEl = el("p", { className: "note" });
+    noteEl.textContent = w.note;
+    textParts.push(noteEl);
+  }
+  const text = el("div", { className: "lightbox-text" }, textParts);
   content.append(wrap, text);
   root.hidden = false;
   document.body.style.overflow = "hidden";

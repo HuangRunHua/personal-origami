@@ -3,62 +3,68 @@
     {
       "id": "work-rabbit",
       "title": "兔子",
-      "designer": "请补充",
+      "titleAlt": "Rabbit",
+      "designer": "Yoo Tae Yong（柳太永）",
       "year": 2025,
-      "paper": "请按实物修改",
-      "note": "设计署名与用纸可在本条目内自行改写。",
-      "image": "images/works/兔子.jpeg",
-      "tags": ["动物"]
+      "paper": "KOMA 35cm×35cm 单色",
+      "source": "出典：Yoo Tae Yong, 《Origami Works of Yoo Tae Yong》",
+      "note": "以 KOMA 折制，体块偏修长，长耳与后肢的分配要在整形阶段耐心收。整体线条偏冷静，和纸色与影调搭起来很适合侧光拍照。",
+      "tags": ["动物", "柳太永", "现代"]
     },
     {
       "id": "work-call-duck",
-      "title": "柯尔鸭",
-      "designer": "请补充",
+      "title": "柯尔鸭 2017",
+      "titleAlt": "Call Duck, 2017",
+      "designer": "Kyohei Katsuta（胜田恭平）",
       "year": 2025,
-      "paper": "请按实物修改",
-      "note": "",
-      "image": "images/works/柯尔鸭.jpeg",
-      "tags": ["动物"]
+      "paper": "KOMA 35cm×35cm 单色",
+      "source": "出典：胜田恭平《胜田恭平作品集》中「Call Duck, 2017」",
+      "note": "造型强调浑圆的体腔与短喙的对比，打线阶段注意对称，鼓腹要在后半段用指腹慢慢顶出体积，最后收口时别折死，保留一点「气感」会更像雏禽。",
+      "tags": ["动物", "胜田恭平", "现代"]
     },
     {
       "id": "work-fox-spirit",
       "title": "灵狐",
-      "designer": "请补充",
+      "titleAlt": "霊狐",
+      "designer": "Kyohei Katsuta（胜田恭平）",
       "year": 2025,
-      "paper": "请按实物修改",
-      "note": "",
-      "image": "images/works/灵狐.jpeg",
-      "tags": ["动物", "现代"]
+      "paper": "KOMA 35cm×35cm 单色",
+      "source": "出典：《折纸侦探团》第 212 期会刊 / 会员册所收稿",
+      "note": "这一类的狐形创作常带一点叙事感：尾巴与耳尖要挑得轻，毛流感多半靠分层与轻按实现。会刊纸型往往页幅不大，用 35cm 以上纸折起来比例更从容。",
+      "tags": ["动物", "胜田恭平", "现代"]
     },
     {
       "id": "work-fox-groom",
       "title": "狐婿",
-      "designer": "请补充",
+      "titleAlt": "狐の婿 / Fox Groom",
+      "designer": "Kyohei Katsuta（胜田恭平）",
       "year": 2025,
-      "paper": "请按实物修改",
-      "note": "",
-      "image": "images/works/狐婿.jpeg",
-      "tags": ["动物", "现代"]
+      "paper": "KOMA 35cm×35cm 双色（正面主色/背面配衬）",
+      "source": "出典：胜田恭平《胜田恭平作品集 2》",
+      "note": "与《狐嫁》可成对展示：和服腰带与裾摆用双色能分清层次。整形时把肩线与袖口拉开，会更有「人形而带耳」的仪式氛围。",
+      "tags": ["动物", "胜田恭平", "现代", "对题"]
     },
     {
       "id": "work-fox-bride",
       "title": "狐嫁",
-      "designer": "请补充",
+      "titleAlt": "狐の嫁 / Fox Bride",
+      "designer": "Kyohei Katsuta（胜田恭平）",
       "year": 2025,
-      "paper": "请按实物修改",
-      "note": "",
-      "image": "images/works/狐嫁.jpeg",
-      "tags": ["动物", "现代"]
+      "paper": "KOMA 35cm×35cm 双色（正背面区分衣纹与饰边）",
+      "source": "出典：胜田恭平《胜田恭平作品集 2》",
+      "note": "嫁衣的展开量较大，后段以湿折辅助褶裥与头饰的定型较稳。和「狐婿」一起摆拍时，可统一主光方向，让两件作品的视线或手势形成呼应。",
+      "tags": ["动物", "胜田恭平", "现代", "对题"]
     },
     {
       "id": "work-kamiya-lion",
       "title": "狮子",
+      "titleAlt": "Lion",
       "designer": "神谷哲史（Satoshi Kamiya）",
       "year": 2025,
-      "paper": "请按实物修改",
-      "note": "文件名标为神谷，署名按常见公开展示。若你折的是同模异版，可改 title / note。",
-      "image": "images/works/神谷狮子.jpeg",
-      "tags": ["动物", "现代"]
+      "paper": "KOMA 35cm×35cm 单色",
+      "source": "出典：神谷哲史《神谷哲史折纸作品集 2》中狮相关稿",
+      "note": "体量大、段数多，折制周期长，更考验纸的韧性及分段整形的节奏。须丛与颜面的起伏建议分多轮整：先大形后细节，最后再做局部湿折固定，拍出来鬃毛的层次会更干净。",
+      "tags": ["动物", "神谷哲史", "现代"]
     }
   ]
 }
