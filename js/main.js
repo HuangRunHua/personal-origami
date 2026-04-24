@@ -54,6 +54,53 @@ function imageSrcEncoded(relPath) {
     .join("/");
 }
 
+/** 多图用 images: ["a.jpg","b.jpg"]；与旧单图 image 可并存，优先 images */
+function getWorkImagePaths(w) {
+  if (!w) return [];
+  if (Array.isArray(w.images) && w.images.length) {
+    return w.images.map((p) => String(p).trim()).filter(Boolean);
+  }
+  if (w.image) return [String(w.image).trim()];
+  return [];
+}
+
+function getImageLabels(w, count) {
+  if (!count) return [];
+  if (Array.isArray(w.imageLabels) && w.imageLabels.length) {
+    return Array.from({ length: count }, (_, i) => {
+      if (i < w.imageLabels.length && w.imageLabels[i] != null) {
+        return String(w.imageLabels[i]).trim();
+      }
+      return "";
+    });
+  }
+  return Array(count).fill("");
+}
+
+function loadImageFromPath(srcPath) {
+  return fetch(imageSrcEncoded(srcPath), { cache: "force-cache" })
+    .then((r) => {
+      if (!r.ok) throw new Error("fetch");
+      return r.blob();
+    })
+    .then((blob) => {
+      if (!blob.size) throw new Error("empty");
+      const u = URL.createObjectURL(blob);
+      return new Promise((resolve, reject) => {
+        const im = new Image();
+        im.onload = () => {
+          URL.revokeObjectURL(u);
+          resolve(im);
+        };
+        im.onerror = () => {
+          URL.revokeObjectURL(u);
+          reject(new Error("img"));
+        };
+        im.src = u;
+      });
+    });
+}
+
 function workMatches(w, filter) {
   if (filter === "全部" || !filter) return true;
   return (w.tags || []).includes(filter);
@@ -94,10 +141,20 @@ function createCard(w) {
     tabindex: "0",
     "aria-label": `查看 ${w.title || "作品"}`,
   });
-  if (w.image) {
+  const paths = getWorkImagePaths(w);
+  if (paths.length) {
+    const n = paths.length;
+    if (n > 1) {
+      visual.append(
+        el("span", {
+          className: "card-image-badge",
+          text: `共 ${n} 张`,
+          "aria-hidden": "true",
+        })
+      );
+    }
     queueMicrotask(() => {
-      const path = imageSrcEncoded(w.image);
-      // fetch → blob → objectURL，含中文路径时比直接设 img.src 更稳；配合 CSS 的 .card-placeholder[hidden] 才隐藏占位
+      const path = imageSrcEncoded(paths[0]);
       fetch(path, { cache: "force-cache" })
         .then((r) => {
           if (!r.ok) throw new Error("fetch");
@@ -178,10 +235,9 @@ function openLightbox(w) {
   const content = lightboxContent();
   if (!root || !content) return;
   content.replaceChildren();
-  const img = new Image();
-  img.src = imageSrcEncoded(w.image) || imageSrc(w.image);
-  img.alt = w.title || "";
-  const wrap = el("div", { className: "lightbox-image-wrap" }, [img]);
+  const paths = getWorkImagePaths(w);
+  const labels = getImageLabels(w, paths.length);
+  const wrap = el("div", { className: "lightbox-image-wrap" });
   const textParts = [el("h2", { text: w.title || "无标题" })];
   if (w.titleAlt) {
     textParts.push(
@@ -204,6 +260,39 @@ function openLightbox(w) {
     textParts.push(noteEl);
   }
   const text = el("div", { className: "lightbox-text" }, textParts);
+  if (!paths.length) {
+    const ph = el("p", { className: "lightbox-missing" });
+    ph.textContent = "该作品未配置图片路径。";
+    wrap.append(ph);
+  } else if (paths.length === 1) {
+    const img = new Image();
+    img.src = imageSrcEncoded(paths[0]) || imageSrc(paths[0]);
+    img.alt = w.title || "";
+    wrap.append(img);
+  } else {
+    const stack = el("div", { className: "lightbox-images" });
+    Promise.all(paths.map((p) => loadImageFromPath(p)))
+      .then((imgs) => {
+        imgs.forEach((im, i) => {
+          const cap = labels[i] || `图 ${i + 1}`;
+          im.alt = `${w.title || "作品"} — ${cap}`;
+          const block = el("div", { className: "lightbox-fig" });
+          block.append(im);
+          if (labels[i] && String(labels[i]).length) {
+            block.append(
+              el("p", { className: "lightbox-figcap", text: labels[i] })
+            );
+          }
+          stack.append(block);
+        });
+        wrap.append(stack);
+      })
+      .catch(() => {
+        const err = el("p", { className: "lightbox-missing" });
+        err.textContent = "部分图片无法加载。";
+        wrap.append(err);
+      });
+  }
   content.append(wrap, text);
   root.hidden = false;
   document.body.style.overflow = "hidden";

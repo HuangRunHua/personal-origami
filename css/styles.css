@@ -542,6 +542,21 @@ code {
   display: none !important;
 }
 
+.card-image-badge {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  z-index: 3;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(20, 18, 16, 0.72);
+  color: #faf6f0;
+  pointer-events: none;
+}
+
 .card-body {
   padding: 1.1rem 1.2rem 1.25rem;
   display: flex;
@@ -777,11 +792,55 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  padding: 0.5rem 0 0.75rem;
+  max-height: min(80vh, 900px);
+  overflow-y: auto;
 }
-.lightbox-image-wrap img {
+.lightbox-image-wrap > img:only-of-type,
+.lightbox-image-wrap > .lightbox-images:only-of-type {
+  max-width: 100%;
+}
+.lightbox-image-wrap > img:only-of-type {
   width: 100%;
   max-height: min(70vh, 560px);
   object-fit: contain;
+}
+.lightbox-images {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+  align-items: center;
+  padding: 0 0.25rem;
+}
+.lightbox-fig {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 100%;
+  width: 100%;
+}
+.lightbox-fig img {
+  width: 100%;
+  max-height: min(48vh, 480px);
+  object-fit: contain;
+}
+.lightbox-figcap {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  text-align: center;
+  max-width: 36ch;
+  line-height: 1.4;
+}
+.lightbox-missing {
+  margin: 1rem;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
 }
 
 .lightbox-text {

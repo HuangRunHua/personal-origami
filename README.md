@@ -25,7 +25,7 @@ python3 -m http.server 8080
 
 ## 日常维护
 
-- 成品图放在 `images/works/`，在 `data/works.json` 中维护作品条目（图片路径、标题、设计者、纸张、标签等）。
+- 成品图放在 `images/works/`，在 `data/works.json` 中维护作品条目。单张图用字段 `image`；**多张**（多面/多角度）用 `images: ["…","…"]` 数组。可选 `imageLabels: ["正面","背面"]` 与 `images` 一一对应，在灯箱中显示在对应图下；不填 `imageLabels` 则仅多图展示、无小标题。
 - 全站通栏、关于、选集、问答等正文已在 `index.html` 中定稿；若需改版式或文案，直接编辑 `index.html` 与 `css/styles.css`。
 
 ## 许可
