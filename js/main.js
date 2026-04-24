@@ -70,10 +70,10 @@ function renderGallery() {
 
 function createCard(w) {
   const visual = el("div", { className: "card-visual" });
-  const img = new Image();
+  const img = document.createElement("img");
   img.alt = w.title || "作品";
-  img.loading = "lazy";
   img.decoding = "async";
+  // 画廊缩略图不用 lazy：先设 src 再入 document 时懒加载可能不触发
   const ph = el("div", { className: "card-placeholder", text: "请放置照片" });
   ph.hidden = true;
   img.addEventListener("load", () => {
@@ -82,8 +82,8 @@ function createCard(w) {
   img.addEventListener("error", () => {
     ph.hidden = false;
   });
-  img.src = imageUrl(w.image);
   visual.append(img, ph);
+  img.src = imageUrl(w.image);
 
   const tags = (w.tags || []).map((t) =>
     el("span", { className: "pill", text: t })
