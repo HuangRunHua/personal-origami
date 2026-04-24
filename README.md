@@ -1,34 +1,38 @@
-# 仿折集 · 静态站点
+# 仿折集
 
-个人折纸习作分享站（成品照与元数据），可部署在 GitHub Pages。访问地址示例：`https://<用户名>.github.io/<仓库名>/`（仓库名自定，例如 `origami`）。
+个人折纸作品记录站。这里收着成品照片，也记下设计者、用纸、完成时间和一些简短的折制感受。
+
+在线访问：<https://huangrunhua.github.io/personal-origami/>
+
+## 这个仓库里有什么
+
+- `index.html`：页面主体结构与主要文案
+- `css/styles.css`：样式与版式
+- `js/main.js`：作品列表、筛选、灯箱等交互
+- `data/works.json`：作品数据
+- `images/works/`：作品图片资源
 
 ## 本地预览
 
-在仓库根目录用任意静态服务器打开，例如：
+在仓库根目录运行任意静态服务器，例如：
 
 ```bash
-cd personal-origami
 python3 -m http.server 8080
 ```
 
-浏览器访问 <http://localhost:8080>。
+然后在浏览器打开 <http://localhost:8080>。
 
-## 部署到 GitHub Pages
+## 内容维护
 
-1. 在 GitHub 新建仓库，将本目录推送上去。
-2. 仓库 **Settings → Pages**：
-   - Source 选 **Deploy from a branch**
-   - Branch 选 `main`（或 `master`），文件夹 `/ (root)`。
-3. 几分钟后可通过 `https://<用户名>.github.io/<仓库名>/` 访问。
+- 新作品图片放在 `images/works/`
+- 在 `data/works.json` 中补充作品标题、设计者、用纸、时间和备注
+- 若一件作品有多张照片，可使用 `images: ["a.jpg", "b.jpg"]`
+- 若需调整页面文案或模块结构，直接修改 `index.html` 与 `css/styles.css`
 
-若你使用用户站点仓库 `username.github.io`，本仓库可改为子项目或整站迁移，路径规则以 GitHub 文档为准。
+## 部署
 
-## 日常维护
-
-- 成品图放在 `images/works/`，在 `data/works.json` 中维护作品条目。单张图用字段 `image`；**多张**（多面/多角度）用 `images: ["…","…"]` 数组；灯箱内横向翻页，图下不另附说明文字。
-- 首屏右侧为 **一张折痕图（CP）**：在 `data/works.json` 根级设 `heroCreasePattern: { "image": "…", "label": "…" }`，`image` 放在 `images/cp/`（PNG、JPG、SVG 均可）。未配置或加载失败时用默认示意文件。
-- 全站通栏、关于、选集、问答等正文已在 `index.html` 中定稿；若需改版式或文案，直接编辑 `index.html` 与 `css/styles.css`。
+本站使用 GitHub Pages，从 `main` 分支的仓库根目录发布。若更新后线上未立即生效，通常等待几分钟即可。
 
 ## 许可
 
-网站代码你可自由按需要修改。
+网站代码可按需修改；作品图片与文案请勿擅自转载或另作他用。
