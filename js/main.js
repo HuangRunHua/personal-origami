@@ -38,6 +38,15 @@ function truncate(s, n) {
   return one.slice(0, n) + "…";
 }
 
+/** 相对路径含中文/空格时，按段 encode，避免部分环境下 img 无法加载 */
+function imageUrl(relPath) {
+  if (!relPath) return "";
+  return relPath
+    .split("/")
+    .map((part) => encodeURIComponent(part))
+    .join("/");
+}
+
 function workMatches(w, filter) {
   if (filter === "全部" || !filter) return true;
   return (w.tags || []).includes(filter);
@@ -73,7 +82,7 @@ function createCard(w) {
   img.addEventListener("error", () => {
     ph.hidden = false;
   });
-  img.src = w.image;
+  img.src = imageUrl(w.image);
   visual.append(img, ph);
 
   const tags = (w.tags || []).map((t) =>
@@ -123,7 +132,7 @@ function openLightbox(w) {
   if (!root || !content) return;
   content.replaceChildren();
   const img = new Image();
-  img.src = w.image;
+  img.src = imageUrl(w.image);
   img.alt = w.title || "";
   const wrap = el("div", { className: "lightbox-image-wrap" }, [img]);
   const textParts = [el("h2", { text: w.title || "无标题" })];
