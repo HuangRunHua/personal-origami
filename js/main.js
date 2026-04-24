@@ -38,9 +38,16 @@ function truncate(s, n) {
   return one.slice(0, n) + "…";
 }
 
-/** 相对路径含中文/空格时，按段 encode，避免部分环境下 img 无法加载 */
-function imageUrl(relPath) {
+/** 绝对 URL 或站点内相对路径；同页内用 UTF-8 路径，避免多轮 encode */
+function imageSrc(rel) {
+  if (!rel) return "";
+  if (/^https?:\/\//i.test(rel)) return rel;
+  return rel;
+}
+
+function imageSrcEncoded(relPath) {
   if (!relPath) return "";
+  if (/^https?:\/\//i.test(relPath)) return relPath;
   return relPath
     .split("/")
     .map((part) => encodeURIComponent(part))
@@ -72,18 +79,34 @@ function createCard(w) {
   const visual = el("div", { className: "card-visual" });
   const img = document.createElement("img");
   img.alt = w.title || "作品";
-  img.decoding = "async";
-  // 画廊缩略图不用 lazy：先设 src 再入 document 时懒加载可能不触发
   const ph = el("div", { className: "card-placeholder", text: "请放置照片" });
   ph.hidden = true;
-  img.addEventListener("load", () => {
+  const onOk = () => {
     ph.hidden = true;
-  });
-  img.addEventListener("error", () => {
+  };
+  const onBad = () => {
     ph.hidden = false;
-  });
+  };
+  function doneIfCached() {
+    if (img.complete && img.naturalWidth > 0) onOk();
+  }
+  img.addEventListener("load", onOk);
+  img.addEventListener("error", onBad);
   visual.append(img, ph);
-  img.src = imageUrl(w.image);
+  const card = el("div", {
+    className: "gallery-card",
+    role: "button",
+    tabindex: "0",
+    "aria-label": `查看 ${w.title || "作品"}`,
+  });
+  if (w.image) {
+    queueMicrotask(() => {
+      img.src = imageSrcEncoded(w.image);
+      doneIfCached();
+    });
+  } else {
+    onBad();
+  }
 
   const tags = (w.tags || []).map((t) =>
     el("span", { className: "pill", text: t })
@@ -112,15 +135,16 @@ function createCard(w) {
     el("div", { className: "card-tags" }, tags)
   );
   const body = el("div", { className: "card-body" }, bodyParts);
-
-  const btn = el("button", {
-    className: "gallery-card",
-    type: "button",
-    "aria-label": `查看 ${w.title || "作品"}`,
+  card.append(visual, body);
+  const open = () => openLightbox(w);
+  card.addEventListener("click", open);
+  card.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      open();
+    }
   });
-  btn.append(visual, body);
-  btn.addEventListener("click", () => openLightbox(w));
-  return btn;
+  return card;
 }
 
 const lightbox = () => document.getElementById("lightbox");
@@ -132,7 +156,7 @@ function openLightbox(w) {
   if (!root || !content) return;
   content.replaceChildren();
   const img = new Image();
-  img.src = imageUrl(w.image);
+  img.src = imageSrcEncoded(w.image) || imageSrc(w.image);
   img.alt = w.title || "";
   const wrap = el("div", { className: "lightbox-image-wrap" }, [img]);
   const textParts = [el("h2", { text: w.title || "无标题" })];
