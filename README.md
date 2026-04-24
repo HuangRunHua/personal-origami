@@ -1,6 +1,6 @@
-# 仿折作品展示 · Origami Gallery
+# 仿折集 · 静态站点
 
-个人折纸作品分享用静态站，主展示成品摄影与作品信息。可部署为 GitHub Project Pages，地址形如：`https://<用户名>.github.io/<仓库名>/`（仓库名自定，例如 `origami`）。
+个人折纸习作分享站（成品照与元数据），可部署在 GitHub Pages。访问地址示例：`https://<用户名>.github.io/<仓库名>/`（仓库名自定，例如 `origami`）。
 
 ## 本地预览
 
@@ -23,10 +23,10 @@ python3 -m http.server 8080
 
 若你使用用户站点仓库 `username.github.io`，本仓库可改为子项目或整站迁移，路径规则以 GitHub 文档为准。
 
-## 替换图片与文案
+## 日常维护
 
-- 将成品照片放在 `images/works/`，在 `data/works.json` 中更新条目（路径、设计署名、纸张说明等）。
-- 修改 `index.html` 中的个人介绍、关于段落与页脚信息。
+- 成品图放在 `images/works/`，在 `data/works.json` 中维护作品条目（图片路径、标题、设计者、纸张、标签等）。
+- 全站通栏、关于、选集、问答等正文已在 `index.html` 中定稿；若需改版式或文案，直接编辑 `index.html` 与 `css/styles.css`。
 
 ## 许可
 

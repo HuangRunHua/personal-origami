@@ -216,7 +216,7 @@ async function main() {
     if (grid) {
       grid.replaceChildren();
       const p = el("p", { className: "section-desc" });
-      p.textContent = "无法加载作品数据。请用本地服务器打开本目录（如 python3 -m http.server）。";
+      p.textContent = "作品列表暂时无法加载，请刷新页面或稍后再试。";
       grid.append(p);
     }
   }
