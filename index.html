@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="个人仿折作品展示 — 仅成品摄影，无步骤与折图。设计均署名为原作者。"
+    />
+    <title>仿折作品集 · Origami</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">跳到主要内容</a>
+
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="logo" href="#top" aria-label="回到顶部">
+          <span class="logo-mark" aria-hidden="true">◇</span>
+          <span class="logo-text">仿折集</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span class="visually-hidden">打开菜单</span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="主导航">
+          <a href="#about">关于</a>
+          <a href="#gallery">作品</a>
+          <a href="#process">说明</a>
+          <a href="#collections">选集</a>
+          <a href="#faq">问答</a>
+          <a href="#colophon">页脚</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="hero-eyebrow">个人习作 · 非商业</p>
+          <h1 id="hero-title" class="hero-title">仿折作品，以纸为媒</h1>
+          <p class="hero-lead">
+            这里只展示我完成的折纸模型照片：纸张、光与折痕留下的形状。所有作品均会标注
+            <strong>设计者署名</strong>。本站不包含任何步骤图或折图，仅作个人记录与分享。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#gallery">浏览作品</a>
+            <a class="button button-ghost" href="#about">了解初衷</a>
+          </div>
+        </div>
+        <div class="hero-side" aria-hidden="true">
+          <div class="hero-paper">
+            <span class="hero-paper-line"></span>
+            <span class="hero-paper-line"></span>
+            <span class="hero-paper-line"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-about" id="about">
+        <div class="section-inner two-col">
+          <div>
+            <h2 class="section-title">关于这个站点</h2>
+            <p class="prose">
+              折纸既是几何也是手感：同样的图解在不同人手中会有细微差别。我记录的是自己练习过程中的成品，用摄影固定光线与角度，方便日后对比进步。
+            </p>
+            <p class="prose">
+              <strong>版权声明方面的自我约束：</strong>我尊重原创设计者，不转载书籍或教程中的折图。页面上仅出现我的成品照片，并写明设计来源。若你有任何疑问，欢迎通过页脚方式联系。
+            </p>
+          </div>
+          <aside class="stat-panel" aria-label="站点信息摘要">
+            <ul class="stat-list">
+              <li>
+                <span class="stat-value" data-stat="count">—</span>
+                <span class="stat-label">件作品（当前数据）</span>
+              </li>
+              <li>
+                <span class="stat-value">0</span>
+                <span class="stat-label">盈利与广告</span>
+              </li>
+              <li>
+                <span class="stat-value">否</span>
+                <span class="stat-label">是否含步骤/折图</span>
+              </li>
+            </ul>
+            <p class="stat-note">
+              数据由 <code>data/works.json</code> 自动汇总，可随你增删作品更新。
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="section-inner">
+          <header class="section-header">
+            <h2 class="section-title">作品廊</h2>
+            <p class="section-desc">
+              按标签筛选；点击卡片可查看略大图与元数据。照片请自行替换
+              <code>images/works/</code> 下文件并同步 JSON。
+            </p>
+          </header>
+          <div
+            class="filter-bar"
+            id="filter-bar"
+            role="tablist"
+            aria-label="按标签筛选"
+          ></div>
+          <div
+            class="gallery-grid"
+            id="gallery-grid"
+            data-empty="尚无任何作品，请在 data/works.json 添加条目。"
+          ></div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="process">
+        <div class="section-inner two-col">
+          <div>
+            <h2 class="section-title">展示约定</h2>
+            <ol class="process-list">
+              <li>
+                <strong>摄影</strong>：自然光或单灯均可；背景尽量干净，以突出纸材质感。
+              </li>
+              <li>
+                <strong>元数据</strong>：建议记录纸尺寸、克数或类型、完成年份，以及设计者的正确拼写与常用署名。
+              </li>
+              <li>
+                <strong>不展示内容</strong>：步骤序列、折图、扫描页与付费教程的摘录 — 本站 intentionally 不包含。
+              </li>
+            </ol>
+          </div>
+          <div class="quote-block">
+            <blockquote>
+              <p>
+                “一张完成的折纸是静止的，但折的过程永远留在纸纤维的应力里。”
+              </p>
+              <footer>— 可替换为你喜欢的一句话，或留作装饰性引文</footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="collections">
+        <div class="section-inner">
+          <h2 class="section-title">主题选集</h2>
+          <p class="section-desc">
+            用叙事把作品串起来。以下为示例结构，你可在
+            <code>data/works.json</code> 中增加 <code>collection</code> 字段后扩展本区块逻辑。
+          </p>
+          <div class="cards-3" id="collections-preview">
+            <article class="info-card">
+              <h3>传统与经典</h3>
+              <p>从基础型谱里挑选的代表作，练习对称与收边。</p>
+            </article>
+            <article class="info-card">
+              <h3>现代设计</h3>
+              <p>跟折当代设计者模型时的记录，注重整形与润湿线。</p>
+            </article>
+            <article class="info-card">
+              <h3>几何与组合</h3>
+              <p>单元拼合与多面体，对纸厚与公差更敏感。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="faq">
+        <div class="section-inner">
+          <h2 class="section-title">常问</h2>
+          <div class="faq" id="faq-list">
+            <details open>
+              <summary>会提供折法吗？</summary>
+              <p>
+                不会。本站只有成品照；想学习折法请通过设计者正式出版的渠道或授权资源获取。
+              </p>
+            </details>
+            <details>
+              <summary>可以转载我的照片吗？</summary>
+              <p>
+                若需使用我的摄影作品，请事先征得同意并注明来源。设计本身仍属各设计者，转载照片不代表获得设计权。
+              </p>
+            </details>
+            <details>
+              <summary>图坏了或加载慢？</summary>
+              <p>
+                检查 <code>data/works.json</code> 中图片路径是否与仓库内文件一致，并尽量压缩
+                JPEG/WebP 以适合网页。
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="colophon">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-title">仿折集</p>
+          <p class="footer-copy">
+            以静态页面托管；内容由本人维护。设计署名以各作品标注为准。
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="https://pages.github.com/" rel="noreferrer"
+            >GitHub Pages</a
+          >
+          <span class="footer-dot" aria-hidden="true">·</span>
+          <a id="link-top" href="#top">回顶部</a>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="lightbox"
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="作品大图"
+      hidden
+    >
+      <button type="button" class="lightbox-close" id="lightbox-close">
+        关闭
+      </button>
+      <div class="lightbox-content" id="lightbox-content"></div>
+    </div>
+
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
