@@ -1,35 +1,64 @@
 {
   "works": [
     {
-      "id": "sample-1",
-      "title": "示例：鹤",
-      "designer": "传统设计 / Traditional",
-      "year": 2024,
-      "paper": "15cm 和纸",
-      "note": "占位条目，请替换为你的照片与信息。",
-      "image": "images/works/placeholder-1.jpg",
-      "tags": ["动物", "传统"]
-    },
-    {
-      "id": "sample-2",
-      "title": "示例：花",
-      "designer": "某设计者（请替换为真实署名）",
-      "year": 2024,
-      "paper": "24cm 牛皮纸",
-      "note": "放一张你自己的成品照。",
-      "image": "images/works/placeholder-2.jpg",
-      "tags": ["植物", "现代"]
-    },
-    {
-      "id": "sample-3",
-      "title": "示例：几何多面体",
-      "designer": "某设计者",
+      "id": "work-rabbit",
+      "title": "兔子",
+      "designer": "请补充",
       "year": 2025,
-      "paper": "双色纸",
-      "note": "可删或增改。",
-      "image": "images/works/placeholder-3.jpg",
-      "tags": ["几何"]
+      "paper": "请按实物修改",
+      "note": "设计署名与用纸可在本条目内自行改写。",
+      "image": "images/works/兔子.jpeg",
+      "tags": ["动物"]
+    },
+    {
+      "id": "work-call-duck",
+      "title": "柯尔鸭",
+      "designer": "请补充",
+      "year": 2025,
+      "paper": "请按实物修改",
+      "note": "",
+      "image": "images/works/柯尔鸭.jpeg",
+      "tags": ["动物"]
+    },
+    {
+      "id": "work-fox-spirit",
+      "title": "灵狐",
+      "designer": "请补充",
+      "year": 2025,
+      "paper": "请按实物修改",
+      "note": "",
+      "image": "images/works/灵狐.jpeg",
+      "tags": ["动物", "现代"]
+    },
+    {
+      "id": "work-fox-groom",
+      "title": "狐婿",
+      "designer": "请补充",
+      "year": 2025,
+      "paper": "请按实物修改",
+      "note": "",
+      "image": "images/works/狐婿.jpeg",
+      "tags": ["动物", "现代"]
+    },
+    {
+      "id": "work-fox-bride",
+      "title": "狐嫁",
+      "designer": "请补充",
+      "year": 2025,
+      "paper": "请按实物修改",
+      "note": "",
+      "image": "images/works/狐嫁.jpeg",
+      "tags": ["动物", "现代"]
+    },
+    {
+      "id": "work-kamiya-lion",
+      "title": "狮子",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2025,
+      "paper": "请按实物修改",
+      "note": "文件名标为神谷，署名按常见公开展示。若你折的是同模异版，可改 title / note。",
+      "image": "images/works/神谷狮子.jpeg",
+      "tags": ["动物", "现代"]
     }
-  ],
-  "tags": ["全部", "动物", "植物", "几何", "传统", "现代"]
+  ]
 }
