@@ -97,7 +97,7 @@ function createCard(w) {
   if (w.image) {
     queueMicrotask(() => {
       const path = imageSrcEncoded(w.image);
-      // 用 fetch → blob 再 objectURL 赋给 img，避免部分环境对含中文/编码的 img.src 误报 error、占位一直显示
+      // fetch → blob → objectURL，含中文路径时比直接设 img.src 更稳；配合 CSS 的 .card-placeholder[hidden] 才隐藏占位
       fetch(path, { cache: "force-cache" })
         .then((r) => {
           if (!r.ok) throw new Error("fetch");
