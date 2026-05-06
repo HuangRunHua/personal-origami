@@ -1,54 +1,82 @@
 {
   "works": [
     {
-      "id": "work-rabbit",
-      "title": "兔子",
-      "titleAlt": "Rabbit",
-      "designer": "Yoo Tae Yong（柳太永）",
-      "year": 2025,
+      "id": "work-matsuda-formal-rabbit",
+      "title": "穿礼服的兔子先生",
+      "titleAlt": "Rabbit in Formal Wear",
+      "designer": "松田景吾（Keigo Matsuda）",
+      "year": 2026,
       "paper": "KOMA 35cm×35cm 单色",
-      "source": "出典：Yoo Tae Yong, 《Origami Works of Yoo Tae Yong》",
-      "note": "这只兔子最吸引我的是那种安静又克制的线条。耳朵和后腿拉得很开，放在侧光里时，轮廓会显得特别清楚；拍完再看，总觉得它像是在自己发呆。",
+      "source": "出典：松田景吾礼服兔相关稿（正式书名与页码确认后会更新）。",
+      "note": "礼服领口与耳朵的立体关系折好后会很耐看；侧光下轮廓线干净，很适合单独摆拍。",
+      "image": "images/works/松田景吾穿礼服的兔子先生.jpeg",
+      "tags": [
+        "动物",
+        "松田景吾",
+        "现代"
+      ]
+    },
+    {
+      "id": "work-pikachu",
+      "title": "皮卡丘",
+      "titleAlt": "Pikachu",
+      "designer": "Tadashi Mori",
+      "year": 2026,
+      "paper": "KOMA 24cm x 24cm 双色纸",
+      "source": "Tadashi Mori 官网可找到,但是只有CP图,无具体步骤图",
+      "note": "CP图不是很难,最后的整形也没有特别复杂.手头没有黄黑纸了只能换成这个色了哈哈,蓝色的皮卡丘.对不起小智哈哈",
+      "image": "images/works/皮卡丘.jpeg",
+      "tags": [
+        "角色",
+        "Tadashi Mori",
+        "现代"
+      ]
+    },
+    {
+      "id": "work-kamiya-golden-retriever",
+      "title": "金毛犬",
+      "titleAlt": "Golden Retriever",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "针阔纸 35cm×35cm 单色",
+      "source": "《神谷哲史作品集2》",
+      "note": "使用针阔纸尝试了一下，厚度确实比较大，但是对塑形有帮助，金毛的整形不多，叠层也比较少，所以稍微厚一些的纸没有什么处理难度。比起霸气的神兽，我更喜欢它这种日常的优雅。它不用说话，稳稳地站在那里，就是最好的陪伴。最满意的部分是对它头部和耳朵下垂感的处理，那一点点精准的折叠线条，真的捕捉到了金毛特有的呆萌神韵。流畅的身体曲线，则是对纸张张力的一种理性运用。",
       "images": [
-        "images/works/兔子.jpeg",
-        "images/works/兔子后侧视图.jpeg"
+        "images/works/神谷金毛犬1.jpeg",
+        "images/works/神谷金毛2.jpeg"
       ],
       "tags": [
         "动物",
-        "柳太永",
+        "神谷哲史",
         "现代"
       ]
     },
     {
-      "id": "work-call-duck",
-      "title": "柯尔鸭 2017",
-      "titleAlt": "Duck 2017",
-      "designer": "Kyohei Katsuta（胜田恭平）",
-      "year": 2025,
+      "id": "work-kamiya-shark",
+      "title": "鲨鱼",
+      "titleAlt": "Shark",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
       "paper": "KOMA 35cm×35cm 单色",
-      "source": "出典：胜田恭平《胜田恭平作品集》中「Duck 2017」",
-      "note": "这是一件看着轻松、其实很考验手感的小作品。身体圆圆的，喙短短的，折完以后总会让人想到刚落地没多久的小鸭子。",
-      "image": "images/works/柯尔鸭.jpeg",
+      "source": "暂时未找到具体出处",
+      "note": "身体流线与鳍的张角拉开以后，静态里也带一点向前冲的动感。",
+      "image": "images/works/神谷鲨鱼1.jpeg",
       "tags": [
         "动物",
-        "胜田恭平",
+        "神谷哲史",
         "现代"
       ]
     },
     {
-      "id": "work-fox-spirit",
-      "title": "灵狐",
-      "titleAlt": "霊狐",
+      "id": "work-katsuta-antelope-akilo",
+      "title": "羚羊亚克路",
+      "titleAlt": "Antelope Akilo",
       "designer": "Kyohei Katsuta（胜田恭平）",
       "year": 2026,
       "paper": "KOMA 35cm×35cm 单色",
-      "source": "出典：《折纸侦探团》第 212 期会刊 / 会员册所收稿",
-      "note": "这件作品自带一点传说里的气质，不靠夸张动作，更多是靠耳尖、尾巴和身体的弧线慢慢把神情带出来。比起锐利，我更喜欢它安静地立着的感觉。",
-      "images": [
-        "images/works/灵狐1.jpeg",
-        "images/works/灵狐2.jpeg",
-        "images/works/灵狐3.jpeg"
-      ],
+      "source": "《New Generation of Origami 2 - Ultimate Origami》",
+      "note": "整体不难,不过耳朵有点小技巧.纸太厚了,折的时候有点吃力.",
+      "image": "images/works/胜田恭平羚羊亚克路.jpeg",
       "tags": [
         "动物",
         "胜田恭平",
@@ -56,56 +84,18 @@
       ]
     },
     {
-      "id": "work-fox-groom",
-      "title": "狐婿",
-      "titleAlt": "狐の婿 / Fox Groom",
-      "designer": "Kyohei Katsuta（胜田恭平）",
-      "year": 2025,
-      "paper": "KOMA 35cm×35cm 双色（正面主色/背面配衬）",
-      "source": "出典：胜田恭平《胜田恭平作品集 2》",
-      "note": "和《狐嫁》放在一起时会很有意思，像是同一场故事里的另一位主角。衣摆和肩线一拉开，狐狸的灵气和人形的仪式感就会同时出来。",
-      "images": [
-        "images/works/狐婿.jpeg",
-        "images/works/狐婿右视图.jpeg"
-      ],
-      "tags": [
-        "动物",
-        "胜田恭平",
-        "现代"
-      ]
-    },
-    {
-      "id": "work-fox-bride",
-      "title": "狐嫁",
-      "titleAlt": "狐の嫁 / Fox Bride",
-      "designer": "Kyohei Katsuta（胜田恭平）",
-      "year": 2025,
-      "paper": "KOMA 35cm×35cm 双色（正背面区分衣纹与饰边）",
-      "source": "出典：胜田恭平《胜田恭平作品集 2》",
-      "note": "这一件最动人的地方在衣纹和头饰的展开，站稳以后会有一种很端正的华丽感。和《狐婿》并排时，画面一下子就完整起来了。",
-      "image": "images/works/狐嫁.jpeg",
-      "tags": [
-        "动物",
-        "胜田恭平",
-        "现代"
-      ]
-    },
-    {
-      "id": "work-inari-fox",
-      "title": "稻荷狐",
-      "titleAlt": "Inari Fox",
-      "designer": "Kyohei Katsuta（胜田恭平）",
-      "source": "出典：《The30th Anniversary Origami Tanteidan Convention 2025》",
+      "id": "work-kamiya-tanuki",
+      "title": "貉",
+      "titleAlt": "Raccoon Dog / Tanuki",
+      "designer": "神谷哲史（Satoshi Kamiya）",
       "year": 2026,
       "paper": "KOMA 35cm×35cm 单色",
-      "note": "这件作品在线上的讨论里，常被提到的是耳部和眼神的处理。耳朵拉得更大以后，整体会带一点神使般的气息，眼部的留白和转折也让表情显得更凝。它和《狐嫁》一系的头部语言有延续关系，但整体又收得很简，既保留了狐的灵性，也尽量避开了过分像兔子的观感。",
-      "images": [
-        "images/works/稻荷狐1.jpeg",
-        "images/works/稻荷狐2.jpeg"
-      ],
+      "source": "《神谷哲史作品集2》",
+      "note": "面部褶皱与耳位稍微动一点，神态差别就会很明显。背部到尾巴的整形步骤中有一步比较复杂,需要多加注意.",
+      "image": "images/works/神谷貉.jpeg",
       "tags": [
         "动物",
-        "胜田恭平",
+        "神谷哲史",
         "现代"
       ]
     },
@@ -141,21 +131,41 @@
       ]
     },
     {
-      "id": "work-kamiya-lion",
-      "title": "狮子",
-      "titleAlt": "Lion",
-      "designer": "神谷哲史（Satoshi Kamiya）",
-      "year": 2025,
+      "id": "work-fox-spirit",
+      "title": "灵狐",
+      "titleAlt": "霊狐",
+      "designer": "Kyohei Katsuta（胜田恭平）",
+      "year": 2026,
       "paper": "KOMA 35cm×35cm 单色",
-      "source": "出典：神谷哲史《神谷哲史折纸作品集 2》中狮相关稿",
-      "note": "这是那种折完会很有成就感的作品。体量大，层次也多，尤其是脸和鬃毛，慢慢整理出来以后，会有一种很沉着的力量感。",
+      "source": "出典：《折纸侦探团》第 212 期会刊 / 会员册所收稿",
+      "note": "这件作品自带一点传说里的气质，不靠夸张动作，更多是靠耳尖、尾巴和身体的弧线慢慢把神情带出来。比起锐利，我更喜欢它安静地立着的感觉。",
       "images": [
-        "images/works/神谷狮子.jpeg",
-        "images/works/神谷狮子后侧面.jpeg"
+        "images/works/灵狐1.jpeg",
+        "images/works/灵狐2.jpeg",
+        "images/works/灵狐3.jpeg"
       ],
       "tags": [
         "动物",
-        "神谷哲史",
+        "胜田恭平",
+        "现代"
+      ]
+    },
+    {
+      "id": "work-inari-fox",
+      "title": "稻荷狐",
+      "titleAlt": "Inari Fox",
+      "designer": "Kyohei Katsuta（胜田恭平）",
+      "source": "出典：《The30th Anniversary Origami Tanteidan Convention 2025》",
+      "year": 2026,
+      "paper": "KOMA 35cm×35cm 单色",
+      "note": "这件作品在线上的讨论里，常被提到的是耳部和眼神的处理。耳朵拉得更大以后，整体会带一点神使般的气息，眼部的留白和转折也让表情显得更凝。它和《狐嫁》一系的头部语言有延续关系，但整体又收得很简，既保留了狐的灵性，也尽量避开了过分像兔子的观感。",
+      "images": [
+        "images/works/稻荷狐1.jpeg",
+        "images/works/稻荷狐2.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "胜田恭平",
         "现代"
       ]
     },
@@ -178,6 +188,63 @@
       ]
     },
     {
+      "id": "work-rabbit",
+      "title": "兔子",
+      "titleAlt": "Rabbit",
+      "designer": "Yoo Tae Yong（柳太永）",
+      "year": 2025,
+      "paper": "KOMA 35cm×35cm 单色",
+      "source": "出典：Yoo Tae Yong, 《Origami Works of Yoo Tae Yong》",
+      "note": "这只兔子最吸引我的是那种安静又克制的线条。耳朵和后腿拉得很开，放在侧光里时，轮廓会显得特别清楚；拍完再看，总觉得它像是在自己发呆。",
+      "images": [
+        "images/works/兔子.jpeg",
+        "images/works/兔子后侧视图.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "柳太永",
+        "现代"
+      ]
+    },
+    {
+      "id": "work-fox-groom",
+      "title": "狐婿",
+      "titleAlt": "狐の婿 / Fox Groom",
+      "designer": "Kyohei Katsuta（胜田恭平）",
+      "year": 2025,
+      "paper": "KOMA 35cm×35cm 双色（正面主色/背面配衬）",
+      "source": "出典：胜田恭平《胜田恭平作品集 2》",
+      "note": "和《狐嫁》放在一起时会很有意思，像是同一场故事里的另一位主角。衣摆和肩线一拉开，狐狸的灵气和人形的仪式感就会同时出来。",
+      "images": [
+        "images/works/狐婿.jpeg",
+        "images/works/狐婿右视图.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "胜田恭平",
+        "现代"
+      ]
+    },
+    {
+      "id": "work-kamiya-lion",
+      "title": "狮子",
+      "titleAlt": "Lion",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2025,
+      "paper": "KOMA 35cm×35cm 单色",
+      "source": "出典：神谷哲史《神谷哲史折纸作品集 2》中狮相关稿",
+      "note": "这是那种折完会很有成就感的作品。体量大，层次也多，尤其是脸和鬃毛，慢慢整理出来以后，会有一种很沉着的力量感。",
+      "images": [
+        "images/works/神谷狮子.jpeg",
+        "images/works/神谷狮子后侧面.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "神谷哲史",
+        "现代"
+      ]
+    },
+    {
       "id": "work-lips",
       "title": "嘴唇",
       "titleAlt": "Lips",
@@ -189,6 +256,38 @@
       "image": "images/works/嘴唇.jpeg",
       "tags": [
         "其它",
+        "现代"
+      ]
+    },
+    {
+      "id": "work-fox-bride",
+      "title": "狐嫁",
+      "titleAlt": "狐の嫁 / Fox Bride",
+      "designer": "Kyohei Katsuta（胜田恭平）",
+      "year": 2025,
+      "paper": "KOMA 35cm×35cm 双色（正背面区分衣纹与饰边）",
+      "source": "出典：胜田恭平《胜田恭平作品集 2》",
+      "note": "这一件最动人的地方在衣纹和头饰的展开，站稳以后会有一种很端正的华丽感。和《狐婿》并排时，画面一下子就完整起来了。",
+      "image": "images/works/狐嫁.jpeg",
+      "tags": [
+        "动物",
+        "胜田恭平",
+        "现代"
+      ]
+    },
+    {
+      "id": "work-call-duck",
+      "title": "柯尔鸭 2017",
+      "titleAlt": "Duck 2017",
+      "designer": "Kyohei Katsuta（胜田恭平）",
+      "year": 2025,
+      "paper": "KOMA 35cm×35cm 单色",
+      "source": "出典：胜田恭平《胜田恭平作品集》中「Duck 2017」",
+      "note": "这是一件看着轻松、其实很考验手感的小作品。身体圆圆的，喙短短的，折完以后总会让人想到刚落地没多久的小鸭子。",
+      "image": "images/works/柯尔鸭.jpeg",
+      "tags": [
+        "动物",
+        "胜田恭平",
         "现代"
       ]
     }
