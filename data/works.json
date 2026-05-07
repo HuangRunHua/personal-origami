@@ -1,6 +1,26 @@
 {
   "works": [
     {
+      "id": "work-kamiya-asian-elephant",
+      "title": "亚洲象",
+      "titleAlt": "Asian Elephant",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "KOMA 35cm×35cm 单色",
+      "source": "出典：神谷哲史《神谷哲史折纸作品集 2》中亚洲象相关稿",
+      "note": "整体感觉不难。若想效果更好，可以适当采用更厚一些的纸来折，比如针阔纸，成品往往会更挺、更有分量。",
+      "images": [
+        "images/works/神谷亚洲象1.jpeg",
+        "images/works/神谷亚洲象2.jpeg",
+        "images/works/神谷亚洲象3.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "神谷哲史",
+        "现代"
+      ]
+    },
+    {
       "id": "work-matsuda-formal-rabbit",
       "title": "穿礼服的兔子先生",
       "titleAlt": "Rabbit in Formal Wear",
