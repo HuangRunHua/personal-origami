@@ -1,6 +1,43 @@
 {
   "works": [
     {
+      "id": "work-kamiya-maple-leaf",
+      "title": "枫叶",
+      "titleAlt": "Maple Leaf",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "KOMA 24cm×24cm 双色纸",
+      "source": "出典：神谷哲史《神谷哲史折纸作品集 2》中枫叶相关稿",
+      "note": "整体感觉不难，可以适当采用更薄一点的纸来折，效果往往会更好。无需整形。",
+      "images": [
+        "images/works/神谷枫叶1.jpeg",
+        "images/works/神谷枫叶2.jpeg"
+      ],
+      "tags": [
+        "植物",
+        "神谷哲史",
+        "现代"
+      ],
+      "completedOn": "2026-05-08"
+    },
+    {
+      "id": "work-ermakov-cat-ioo-2017-r1",
+      "title": "猫",
+      "titleAlt": "Cat",
+      "designer": "Andrey Ermakov（俄罗斯）",
+      "year": 2026,
+      "paper": "KOMA 24cm×24cm 单色纸（厚度适中；官方推荐挑战用纸约 20cm×20cm、30–40 g/m²）",
+      "source": "出典：国际折纸奥林匹克（International Origami Olympiad）2017 届 Round 1",
+      "note": "配有详细的折法教程，难度不高。这张 KOMA 单色纸厚薄适中；官方推荐用约 20cm×20cm、30–40 g/m² 的纸来挑战。作品线条非常优雅。",
+      "image": "images/works/猫-Andrey-Ermakov(Russia).jpeg",
+      "tags": [
+        "动物",
+        "Andrey Ermakov",
+        "现代"
+      ],
+      "completedOn": "2026-05-08"
+    },
+    {
       "id": "work-kamiya-asian-elephant",
       "title": "亚洲象",
       "titleAlt": "Asian Elephant",
@@ -18,7 +55,8 @@
         "动物",
         "神谷哲史",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-05-08"
     },
     {
       "id": "work-matsuda-formal-rabbit",
@@ -34,7 +72,8 @@
         "动物",
         "松田景吾",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-27"
     },
     {
       "id": "work-pikachu",
@@ -50,7 +89,8 @@
         "角色",
         "Tadashi Mori",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-29"
     },
     {
       "id": "work-kamiya-golden-retriever",
@@ -69,7 +109,8 @@
         "动物",
         "神谷哲史",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-05-01"
     },
     {
       "id": "work-kamiya-shark",
@@ -85,7 +126,8 @@
         "动物",
         "神谷哲史",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-20"
     },
     {
       "id": "work-katsuta-antelope-akilo",
@@ -101,7 +143,8 @@
         "动物",
         "胜田恭平",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-22"
     },
     {
       "id": "work-kamiya-tanuki",
@@ -117,7 +160,8 @@
         "动物",
         "神谷哲史",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-24"
     },
     {
       "id": "work-ratatouille",
@@ -133,7 +177,8 @@
         "动物",
         "阮洪忠",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-13"
     },
     {
       "id": "work-butterfly-1",
@@ -148,7 +193,8 @@
       "tags": [
         "昆虫",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-15"
     },
     {
       "id": "work-fox-spirit",
@@ -168,7 +214,8 @@
         "动物",
         "胜田恭平",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-17"
     },
     {
       "id": "work-inari-fox",
@@ -187,7 +234,8 @@
         "动物",
         "胜田恭平",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-06"
     },
     {
       "id": "work-pt-rose",
@@ -205,7 +253,8 @@
       "tags": [
         "花卉",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-08"
     },
     {
       "id": "work-rabbit",
@@ -224,7 +273,8 @@
         "动物",
         "柳太永",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-10"
     },
     {
       "id": "work-fox-groom",
@@ -243,7 +293,8 @@
         "动物",
         "胜田恭平",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-03-30"
     },
     {
       "id": "work-kamiya-lion",
@@ -262,7 +313,8 @@
         "动物",
         "神谷哲史",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-01"
     },
     {
       "id": "work-lips",
@@ -277,7 +329,8 @@
       "tags": [
         "其它",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-04-03"
     },
     {
       "id": "work-fox-bride",
@@ -293,7 +346,8 @@
         "动物",
         "胜田恭平",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-03-23"
     },
     {
       "id": "work-call-duck",
@@ -309,7 +363,8 @@
         "动物",
         "胜田恭平",
         "现代"
-      ]
+      ],
+      "completedOn": "2026-03-25"
     }
   ]
 }

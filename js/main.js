@@ -1,5 +1,6 @@
 /**
  * 从 data/works.json 渲染画廊、筛选、灯箱与作品计数
+ * 完成时间：优先 w.completedOn（ISO YYYY-MM-DD），否则用 w.year
  */
 const state = {
   works: [],
@@ -94,6 +95,23 @@ function loadImageFromPath(srcPath) {
         im.src = u;
       });
     });
+}
+
+/** completedOn 优先：ISO YYYY-MM-DD；否则用 year 显示粗略完成时间 */
+function formatCompletionLabel(w) {
+  const raw = w && w.completedOn;
+  if (typeof raw === "string") {
+    const s = raw.trim();
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+    if (m) {
+      const y = Number(m[1]);
+      const mo = Number(m[2]);
+      const d = Number(m[3]);
+      return `${y} 年 ${mo} 月 ${d} 日完成`;
+    }
+  }
+  if (w.year != null && w.year !== "") return `${w.year} 完成`;
+  return "";
 }
 
 function workMatches(w, filter) {
@@ -205,7 +223,7 @@ function createCard(w) {
   bodyParts.push(
     el("p", {
       className: "card-meta",
-      text: [w.paper, w.year ? `${w.year} 完成` : ""].filter(Boolean).join(" · "),
+      text: [w.paper, formatCompletionLabel(w)].filter(Boolean).join(" · "),
     }),
     el("div", { className: "card-tags" }, tags)
   );
@@ -265,7 +283,10 @@ function openLightbox(w) {
   textParts.push(
     el("p", { className: "field", text: `设计者：${w.designer || "—"}` }),
     el("p", { className: "field", text: `用纸：${w.paper || "—"}` }),
-    el("p", { className: "field", text: `完成时间：${w.year ?? "—"}` })
+    el("p", {
+      className: "field",
+      text: `完成时间：${formatCompletionLabel(w) || "—"}`,
+    })
   );
   if (w.source) {
     textParts.push(
