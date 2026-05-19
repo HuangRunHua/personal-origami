@@ -1,6 +1,69 @@
 {
   "works": [
     {
+      "id": "work-kamiya-otter",
+      "title": "水獭",
+      "titleAlt": "Otter",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "双色纸（规格待补）",
+      "source": "出典：《折纸探侦团》Vol.29（第 29 回合集）",
+      "note": "水獭的头部、身体和尾部线条都很清楚，双色效果让口鼻与腹部自然分出来。整体姿态生动，侧面看尤其有水獭伏低身体向前探的感觉。",
+      "images": [
+        "images/works/神谷水獭1.jpeg",
+        "images/works/神谷水獭2.jpeg",
+        "images/works/神谷水獭3.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "神谷哲史",
+        "现代"
+      ],
+      "completedOn": "2026-05-15"
+    },
+    {
+      "id": "work-katsuta-almiraj",
+      "title": "独角兔",
+      "titleAlt": "Almiraj",
+      "designer": "Kyohei Katsuta（胜田恭平）",
+      "year": 2026,
+      "paper": "KOMA 35cm×35cm 单色纸",
+      "source": "出典：《折纸探侦团》Vol.29（第 29 回合集）",
+      "note": "Almiraj 源自古老的阿拉伯神话与中世纪伊斯兰传说。胜田恭平的设计线条干净，独角、眼睛和耳朵都很利落；这件用 KOMA 35cm 单色纸折时感觉略薄，之后可以试试稍微厚一些的纸。",
+      "images": [
+        "images/works/胜田恭平独角兔1.jpeg",
+        "images/works/胜田恭平独角兔2.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "胜田恭平",
+        "现代"
+      ],
+      "completedOn": "2026-05-13"
+    },
+    {
+      "id": "work-kamiya-sleipnir",
+      "title": "斯莱普尼尔",
+      "titleAlt": "Sleipnir / 八脚马",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "生态纸 35cm×35cm 深棕色",
+      "source": "出典：神谷哲史《神谷哲史折纸作品集 2》",
+      "note": "北欧神话中的八脚神马，完成后站姿厚重稳定。书中推荐 25cm 纸，但第一次折更建议直接用 35cm 甚至 40cm 以上的大纸；后段八条腿的聚合比较考验厚度管理，生态纸硬朗的质感会让成品更有雕塑感。",
+      "images": [
+        "images/works/神谷八脚马1.jpeg",
+        "images/works/神谷八脚马2.jpeg",
+        "images/works/神谷八脚马3.jpeg"
+      ],
+      "tags": [
+        "神话",
+        "动物",
+        "神谷哲史",
+        "现代"
+      ],
+      "completedOn": "2026-05-11"
+    },
+    {
       "id": "work-kamiya-maple-leaf",
       "title": "枫叶",
       "titleAlt": "Maple Leaf",
