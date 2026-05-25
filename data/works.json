@@ -1,6 +1,73 @@
 {
   "works": [
     {
+      "id": "work-kamiya-black-kite",
+      "title": "黑鸢",
+      "titleAlt": "Black Kite",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "生态纸 35cm×35cm",
+      "source": "出典：《折纸探侦团》Vol.24",
+      "note": "终于把《折纸探侦团》Vol.24 里这只让人心心念念的神谷黑鸢折出来了。生态纸非常适合折黑鸢，整体难度不大，但需要一点耐心；脚部实在很小，处理起来挺费劲。成品整体比较大，也比较薄，35cm 纸折起来感觉刚刚好。",
+      "images": [
+        "images/works/神谷黑鸢1.jpeg",
+        "images/works/神谷黑鸢2.jpeg",
+        "images/works/神谷黑鸢3.jpeg",
+        "images/works/神谷黑鸢4.jpeg",
+        "images/works/神谷黑鸢5.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "神谷哲史",
+        "现代"
+      ],
+      "completedOn": "2026-05-25"
+    },
+    {
+      "id": "work-kamiya-minotaur",
+      "title": "牛头怪",
+      "titleAlt": "Minotaur",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "生态纸 50cm×50cm（深棕色）",
+      "source": "出典：神谷哲史《神谷哲史折纸作品集 2》- Minotaur",
+      "note": "断断续续折了一周，终于把这尊让人又爱又恨的肌肉猛兽拿下了。生态纸的质感很适合它，成品自带一种古老的青铜雕塑感，压迫感很强。50cm 的大纸最后折完只有 10 厘米左右，建议起步直接上 50cm；头部细节、牛角、手臂厚度、牛蹄和胸背肌肉块都需要耐心微调，必要时可以借助湿折辅助塑形。",
+      "images": [
+        "images/works/神谷牛头怪1.jpeg",
+        "images/works/神谷牛头怪2.jpeg",
+        "images/works/神谷牛头怪3.jpeg",
+        "images/works/神谷牛头怪4.jpeg",
+        "images/works/神谷牛头怪5.jpeg"
+      ],
+      "tags": [
+        "神话",
+        "神谷哲史",
+        "现代"
+      ],
+      "completedOn": "2026-05-25"
+    },
+    {
+      "id": "work-kamiya-fiddler-crab",
+      "title": "招潮蟹",
+      "titleAlt": "Fiddler Crab",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "用纸规格待补",
+      "source": "出典：神谷哲史《神谷哲史折纸作品集 4》- Fiddler Crab",
+      "note": "神谷哲史的招潮蟹把非对称的大螯作为视觉中心，成品很容易带出横向展开的姿态。腿部和蟹钳的细节需要慢慢整理，拍照时多个角度能更清楚地看到大螯、身体和细足之间的层次。",
+      "images": [
+        "images/works/神谷招潮蟹1.jpeg",
+        "images/works/神谷招潮蟹2.jpeg",
+        "images/works/神谷招潮蟹3.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "神谷哲史",
+        "现代"
+      ],
+      "completedOn": "2026-05-25"
+    },
+    {
       "id": "work-kamiya-otter",
       "title": "水獭",
       "titleAlt": "Otter",
