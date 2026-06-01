@@ -1,6 +1,26 @@
 {
   "works": [
     {
+      "id": "work-kamo-little-pig",
+      "title": "小猪猪",
+      "titleAlt": "Pig",
+      "designer": "加茂弘郎（Hiroo Kamo）",
+      "year": 2026,
+      "paper": "KOMA 25cm×25cm 单色纸",
+      "source": "出典：《折纸探侦团》217 期",
+      "note": "整体造型圆滚滚的，鼻子、耳朵和小尾巴都很可爱；25cm 的 KOMA 单色纸折出来大小合适，成品保留了简单干净的小猪轮廓。",
+      "images": [
+        "images/works/加茂弘郎小猪猪2.jpeg",
+        "images/works/加茂弘郎小猪猪1.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "加茂弘郎",
+        "现代"
+      ],
+      "completedOn": "2026-05-30"
+    },
+    {
       "id": "work-kamiya-black-kite",
       "title": "黑鸢",
       "titleAlt": "Black Kite",
