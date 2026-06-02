@@ -1,6 +1,47 @@
 {
   "works": [
     {
+      "id": "work-gotani-sherlock-holmes",
+      "title": "夏洛克·福尔摩斯",
+      "titleAlt": "Sherlock Holmes",
+      "designer": "Tetsuya Gotani（五谷哲也）",
+      "year": 2026,
+      "paper": "KOMA 棕色纸 3 张 + KOMA 灰色纸 2 张（组合件；推荐 7.5cm 方纸）",
+      "source": "出典：《BOS Convention 2024 Autumn》",
+      "note": "适合作为书签来用，由多张方纸组合而成。12cm 折出来还是偏大，更推荐 7.5cm 的纸；帽檐、烟斗和侧脸轮廓折好后很有辨识度。同期刊物里还有龙神 2 的教程。",
+      "images": [
+        "images/works/Tetsuya Gotani-福尔摩斯1.jpeg",
+        "images/works/Tetsuya Gotani-福尔摩斯2.jpeg"
+      ],
+      "tags": [
+        "角色",
+        "五谷哲也",
+        "现代"
+      ],
+      "completedOn": "2026-06-01"
+    },
+    {
+      "id": "work-katsuta-persian-cat",
+      "title": "波斯猫",
+      "titleAlt": "Persian Cat",
+      "designer": "Kyohei Katsuta（胜田恭平）",
+      "year": 2026,
+      "paper": "35cm 65g 针阔纸 + KOMA 35cm×35cm 单色纸",
+      "source": "出典：胜田恭平《胜田恭平折纸作品集2》中 Persian Cat / ペルシャ猫",
+      "note": "一次折了两只：一只故意把脸折得大一点，神情有点「不高兴」；另一只则是「没头脑」，眼睛上色还没完全满意。更推荐偏大、偏厚的纸，薄纸容易软塌；嘴部也比较考验技术，处理不好会像猫狗狮都不像。",
+      "images": [
+        "images/works/胜田波斯猫1.jpeg",
+        "images/works/胜田波斯猫2.jpeg",
+        "images/works/胜田波斯猫3.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "胜田恭平",
+        "现代"
+      ],
+      "completedOn": "2026-06-01"
+    },
+    {
       "id": "work-kamo-little-pig",
       "title": "小猪猪",
       "titleAlt": "Pig",
