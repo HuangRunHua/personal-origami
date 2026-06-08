@@ -1,6 +1,45 @@
 {
   "works": [
     {
+      "id": "work-inayoshi-koi",
+      "title": "锦鲤",
+      "titleAlt": "Nishikigoi / Koi",
+      "designer": "稲吉秀尚（Hidehisa Inayoshi）",
+      "year": 2026,
+      "paper": "KOMA 25cm×25cm 单色纸",
+      "source": "出典：稲吉秀尚 Nishikigoi 相关稿（常见于《水生生物の折り紙》/ Origami Aquarium）",
+      "note": "送上一只折纸锦鲤，高考加油，逢考必过。来自稲吉秀尚的锦鲤设计，25cm KOMA 单色纸折成，整体难度不大；红白分色折好后很有锦鲤游动的感觉。",
+      "images": [
+        "images/works/稻吉秀尚锦鲤1.jpeg",
+        "images/works/稻吉秀尚锦鲤2.jpeg",
+        "images/works/稻吉秀尚锦鲤3.jpeg",
+        "images/works/稻吉秀尚锦鲤4.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "稲吉秀尚",
+        "现代"
+      ],
+      "completedOn": "2026-06-01"
+    },
+    {
+      "id": "work-tobaru-integral-constant",
+      "title": "高数不定积分要 + C",
+      "titleAlt": "Integral Constant / + C",
+      "designer": "桃原瑞季（Mizuki Tobaru）",
+      "year": 2026,
+      "paper": "KOMA 双色纸（白/绿 25cm）",
+      "source": "出典：《折纸探侦团》Vol.30（第 30 回合集）",
+      "note": "名字就把高数人的痛点写脸上了：不定积分别忘了加 C。折出来是平面几何感很强的「+」和「C」组合图案，很适合当书签或桌面小摆件；教程出自折纸探侦团合集 30。",
+      "image": "images/works/水木户原积分常数.jpeg",
+      "tags": [
+        "其它",
+        "桃原瑞季",
+        "现代"
+      ],
+      "completedOn": "2026-06-01"
+    },
+    {
       "id": "work-gotani-sherlock-holmes",
       "title": "夏洛克·福尔摩斯",
       "titleAlt": "Sherlock Holmes",
