@@ -1,6 +1,27 @@
 {
   "works": [
     {
+      "id": "work-kamiya-lyrebird",
+      "title": "琴鸟",
+      "titleAlt": "Lyrebird",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "生态纸 35cm×35cm",
+      "source": "出典：神谷哲史《神谷哲史折纸作品集 2》",
+      "note": "断断续续折了两周左右。整体难度不算特别高，但尾羽那一排装饰羽毛才是重头戏：设计里用了经典的三浦折叠逻辑来做出展开后的羽片纹理，尾部还需要一连串连续沉折，非常考验耐心。生态纸的韧性和厚度刚刚好，既能撑起尾羽骨架，又不会让复杂层叠显得臃肿；成品线条很硬挺，尾羽像扇子一样展开，有一种绝对理性和秩序感的美。",
+      "images": [
+        "images/works/神谷琴鸟1.jpeg",
+        "images/works/神谷琴鸟2.jpeg",
+        "images/works/神谷琴鸟3.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "神谷哲史",
+        "现代"
+      ],
+      "completedOn": "2026-06-01"
+    },
+    {
       "id": "work-inayoshi-koi",
       "title": "锦鲤",
       "titleAlt": "Nishikigoi / Koi",
