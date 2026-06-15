@@ -1,6 +1,70 @@
 {
   "works": [
     {
+      "id": "work-jeong-horse",
+      "title": "马",
+      "titleAlt": "Horse",
+      "designer": "郑在壹（Jeong Jae Il）",
+      "year": 2026,
+      "paper": "生态纸 50cm×50cm",
+      "source": "出典：《POTENTIAL ORIGAMI COLLECTION》（韩国潜力折纸合集）",
+      "note": "前后断断续续折了大约一周。前蹄扬起的站姿很有张力，内部格线复杂、接合也多，折完以后成品有一种很结实的力量感。书中官方推荐 70cm 纸来优化比例和接合，这次用 50cm 生态纸也折出来了，但起步更大一些会更从容。",
+      "images": [
+        "images/works/郑在壹马1.jpeg",
+        "images/works/郑在壹马2.jpeg",
+        "images/works/郑在壹马3.jpeg",
+        "images/works/郑在壹马4.jpeg",
+        "images/works/郑在壹马5.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "郑在壹",
+        "现代"
+      ],
+      "completedOn": "2026-06-01"
+    },
+    {
+      "id": "work-kamiya-american-cocker-spaniel",
+      "title": "美国可卡犬",
+      "titleAlt": "American Cocker Spaniel",
+      "designer": "神谷哲史（Satoshi Kamiya）",
+      "year": 2026,
+      "paper": "针阔纸 35cm×35cm",
+      "source": "出典：《折纸探侦团》91 期",
+      "note": "神谷哲史的美国可卡犬，长耳垂下来以后轮廓很饱满。35cm 针阔纸折出来体量合适，纸稍厚一点也更能撑住身体和耳朵的立体关系。",
+      "images": [
+        "images/works/神谷美国可卡犬1.jpeg",
+        "images/works/神谷美国可卡犬2.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "神谷哲史",
+        "现代"
+      ],
+      "completedOn": "2026-06-01"
+    },
+    {
+      "id": "work-lang-scorpion",
+      "title": "蝎子",
+      "titleAlt": "Scorpion",
+      "designer": "Robert J. Lang（罗伯特朗）",
+      "year": 2026,
+      "paper": "昆虫纸 30cm×30cm（19g）",
+      "source": "出典：罗伯特·J·兰《折纸昆虫 2》（Origami Insects 2）",
+      "note": "罗伯特朗的蝎子结构非常工整，钳子、节肢和翘起的尾刺都很有辨识度。30cm、19g 的昆虫纸薄而挺，细腿和尾部分段折起来要耐心，但成品线条很利落。",
+      "images": [
+        "images/works/罗伯特朗蝎子2.jpeg",
+        "images/works/罗伯特朗蝎子3.jpeg",
+        "images/works/罗伯特朗蝎子1.jpeg"
+      ],
+      "tags": [
+        "昆虫",
+        "罗伯特朗",
+        "现代"
+      ],
+      "completedOn": "2026-06-01"
+    },
+    {
       "id": "work-kamiya-lyrebird",
       "title": "琴鸟",
       "titleAlt": "Lyrebird",
