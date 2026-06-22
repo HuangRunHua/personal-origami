@@ -1,6 +1,48 @@
 {
   "works": [
     {
+      "id": "work-park-doberman",
+      "title": "杜宾犬",
+      "titleAlt": "Doberman",
+      "designer": "朴钟宇（Park Jong Woo）",
+      "year": 2026,
+      "paper": "创作折纸 35cm×35cm 双面 KOMA 纸（黑/红）",
+      "source": "出典：《POTENTIAL ORIGAMI COLLECTION》（韩国潜力折纸合集）",
+      "note": "一只杜宾犬的诞生。用时大约 2 小时，35cm 创作折纸双面 KOMA 纸的黑红分色很适合这个品种；不过纸还是略小，头部一些细节不太好处理，也可以选择跳过。",
+      "images": [
+        "images/works/朴钟宇杜宾犬2.jpeg",
+        "images/works/朴钟宇杜宾犬4.jpeg",
+        "images/works/朴钟宇杜宾犬3.jpeg",
+        "images/works/朴钟宇杜宾犬1.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "朴钟宇",
+        "现代"
+      ],
+      "completedOn": "2026-06-20"
+    },
+    {
+      "id": "work-jeong-horse-white",
+      "title": "马（白色版）",
+      "titleAlt": "Horse (White)",
+      "designer": "郑在壹（Jeong Jae Il）",
+      "year": 2026,
+      "paper": "生态纸 50cm×50cm（银白色）",
+      "source": "出典：《POTENTIAL ORIGAMI COLLECTION》（韩国潜力折纸合集）",
+      "note": "潜力马的白纸复折版。同样来自郑在壹的马设计，这次改用 50cm 银白色生态纸，前蹄扬起的姿态更干净利落，整体线条在浅色纸面上会更强调折痕层次。",
+      "images": [
+        "images/works/郑在壹马白色1.jpeg",
+        "images/works/郑在壹马白色2.jpeg"
+      ],
+      "tags": [
+        "动物",
+        "郑在壹",
+        "现代"
+      ],
+      "completedOn": "2026-06-19"
+    },
+    {
       "id": "work-jeong-horse",
       "title": "马",
       "titleAlt": "Horse",
