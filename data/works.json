@@ -1,6 +1,28 @@
 {
   "works": [
     {
+      "id": "work-yoo-centaur",
+      "title": "半人马",
+      "titleAlt": "Centaur",
+      "designer": "Yoo Tae Yong",
+      "year": 2026,
+      "paper": "生态纸 50cm×50cm（棕色）",
+      "source": "出典：《POTENTIAL ORIGAMI COLLECTION》（韩国潜力折纸合集）",
+      "note": "历时两周。柳太永的半人马是带胸肌、腹肌的肌肉猛男款，跃起姿态很有爆发力；50cm 棕色生态纸折出来成品偏大，纸的硬度也刚好能撑起这个姿势。手指部分最难，实在太小了；整体自由发挥空间很大，整形时可以按自己的理解慢慢调整。",
+      "images": [
+        "images/works/半人马1.jpeg",
+        "images/works/半人马2.jpeg",
+        "images/works/半人马3.jpeg",
+        "images/works/半人马4.jpeg"
+      ],
+      "tags": [
+        "神话",
+        "柳太永",
+        "现代"
+      ],
+      "completedOn": "2026-06-21"
+    },
+    {
       "id": "work-park-doberman",
       "title": "杜宾犬",
       "titleAlt": "Doberman",
